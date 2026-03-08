@@ -1,40 +1,73 @@
-# Titanic-Survival
-This project predicts passenger survival on the Titanic using a Machine Learning model built with Python.
+# Titanical-Survival
+
+Predicting passenger survival on the Titanic using Machine Learning.
+
+---
 
 ## Project Overview
+The Titanic disaster is one of the most infamous maritime tragedies. This project predicts whether a passenger survived using historical data. It demonstrates **data exploration, preprocessing, visualization, and model building**.
 
-The goal of this project is to analyze the Titanic dataset and build a classification model that predicts whether a passenger survived or not.
+---
 
-## Technologies Used
+## Dataset
+The dataset is based on the **Titanic Dataset** from [Kaggle](https://www.kaggle.com/c/titanic/data).  
+- **Number of records:** 891 passengers  
+- **Columns used:**
+  - `sex` – Passenger gender
+  - `age` – Passenger age
+  - `fare` – Ticket fare
+  - `Pclass` – Passenger class (1 = 1st, 2 = 2nd, 3 = 3rd)
+  - `survived` – Survival status (0 = No, 1 = Yes)
 
-* Python
-* Pandas
-* Seaborn
-* Matplotlib
-* Scikit-learn
+---
 
-## Steps in the Project
+## How to Run
+1. Open `code.ipynb` in **VS Code** or **Jupyter Notebook**.  
+2. Ensure `Titanic_Survival.csv` is in the same folder.  
+3. Run the cells step by step to see **data preprocessing, visualizations, and predictions**.  
 
-1. Data Loading and Exploration
-2. Handling Missing Values
-3. Feature Encoding
-4. Data Visualization
-5. Train-Test Split
-6. Model Training using Decision Tree Classifier
-7. Model Evaluation using Accuracy, Precision, Recall, F1-score, ROC-AUC
-8. Visualization using Confusion Matrix and ROC Curve
-9. Feature Importance Analysis
+---
+
+## Data Visualization
+The project produces several graphs to explore and understand the data:
+
+- Survival count plot  
+- Survival by gender  
+- Age distribution  
+- Fare vs Survival  
+- Correlation heatmap  
+- Confusion Matrix & ROC Curve  
+- Feature Importance
+
+---
 
 ## Model
+**Algorithm:** Decision Tree Classifier (Gini criterion)  
+**Features used:** `sex`, `age`, `fare`, `Pclass`  
+**Evaluation Metrics:**  
+- Accuracy  
+- Precision  
+- Recall  
+- F1-Score  
+- ROC-AUC  
+- 5-Fold Cross-Validation  
 
-A Decision Tree Classifier was used to train the model and evaluate passenger survival prediction.
+**Example prediction:**
 
-## Output
+| Sex   | Age | Fare   | Pclass | Predicted Survival |
+|-------|-----|--------|--------|------------------|
+| Male  | 9   | 20.525 | 3      | 1 (Survived)     |
 
-The model predicts whether a passenger survived based on the following features:
+---
 
-* Sex
-* Age
-* Fare
-* Passenger Class
+## Results
+The Decision Tree model achieved:
 
+- **Train Accuracy:** ~79%  
+- **Test Accuracy:** ~79%  
+- **Precision:** 0.72  
+- **Recall:** 0.78  
+- **F1 Score:** 0.75  
+- **ROC-AUC:** 0.80
+
+> Cross-validation ensures the model generalizes well to unseen data.
